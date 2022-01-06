@@ -31,7 +31,7 @@ namespace GetHwid
             return SerialNumber;
         }
 
-        static string GetHDDSerial()
+        public static string GetHDDSerial()
         {
             string SerialNumber = "";
             ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
@@ -42,7 +42,7 @@ namespace GetHwid
             return SerialNumber;
         }
 
-        static string GetCustomHwid()
+        public static string GetCustomHwid()
         {
             string CustomHwid = GetProcessorID() + "(!*!)" + GetMotherBoardSerial() + "(!*!)" + GetHDDSerial();
             var stringBuilder = new StringBuilder();
